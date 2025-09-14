@@ -1,6 +1,7 @@
 package com.springboot.registro_usuarios.services;
 
 import com.springboot.registro_usuarios.dto.LoginRequest;
+import com.springboot.registro_usuarios.models.Role;
 import com.springboot.registro_usuarios.models.User;
 import com.springboot.registro_usuarios.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class AuthService {
     }
 
     public User registerUser(User user){
+        user.setRole(Role.ADMIN);
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         return userRepository.save(user);
