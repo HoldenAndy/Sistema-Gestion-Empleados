@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import com.springboot.registro_usuarios.models.User;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 @Service
 public class JwtService {
@@ -37,13 +39,22 @@ public class JwtService {
         (es decir, asegurarse de que no ha sido modificado).
         */
 
+        // Instante de creación del token (ahora)
+        Instant issuedAtInstant = Instant.now();
+        Date issuedAt = Date.from(issuedAtInstant);
+
+        // Instante de expiración del token (1 hora después)
+        Instant expiresAtInstant = issuedAtInstant.plus(1, ChronoUnit.HOURS);
+        Date expiresAt = Date.from(expiresAtInstant);
+
+        LocalDate currentDate = LocalDate.now();
         return JWT.create()
                 .withSubject(user.getEmail())/*
                 El "sujeto" del token es el email del usuario.
                 Es una forma de identificar a quién pertenece el token.
                 */
-                .withIssuedAt(Instant.now())
-                .withExpiresAt(Instant.now().plus(1, ChronoUnit.HOURS))/*
+                .withIssuedAt(issuedAt)
+                .withExpiresAt(expiresAt)/*
                 Establecemos una fecha de expiración para el token (en este caso, 1 hora).
                 Es una buena práctica por seguridad.
                 */

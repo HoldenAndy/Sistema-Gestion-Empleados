@@ -22,12 +22,12 @@ public class AuthController {
         this.jwtService = jwtService;
     }
 
-    @PostMapping("/register")
+    /*@PostMapping("/register")
     public ResponseEntity<User> registerUser (@RequestBody User user/*
     @RequestBody User user: Esta anotación le dice a Spring que tome el cuerpo de la petición HTTP
     (el JSON que envía el cliente) y lo convierta automáticamente en un objeto User de Java.
     Esto es uno de los mayores beneficios de Spring.
-     */
+
     ){
 
         User registeredUser = authService.registerUser(user);
@@ -36,8 +36,8 @@ public class AuthController {
         incluyendo el cuerpo, los encabezados y el código de estado. Aquí, estamos devolviendo
         el usuario registrado y un código de estado 201 Created, que es la respuesta estándar
         para la creación exitosa de un recurso.
-        */
-    }
+
+    }*/
 
     @PostMapping("/login")
     /*

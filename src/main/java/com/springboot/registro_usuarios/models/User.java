@@ -27,6 +27,7 @@ public class User {
     */
     private Long id;
 
+
     @Column(unique = true, nullable = false)/*
     Esta anotación permite definir las propiedades de una columna.
     La propiedad unique en true es para indicar que el atributo debe ser único,
@@ -40,14 +41,18 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(nullable = false)
+    private boolean firstLogin = true;
+
     public User() {
     }
 
-    public User(Long id, String email, String password, Role role) {
+    public User(Long id, String email, String password, Role role, boolean firstLogin) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.role = role;
+        this.firstLogin = firstLogin;
     }
 
     public Long getId() {
@@ -76,5 +81,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isFirstLogin(){
+        return firstLogin;
+    }
+
+    public void setFirstLogin(boolean firstLogin){
+        this.firstLogin = firstLogin;
     }
 }

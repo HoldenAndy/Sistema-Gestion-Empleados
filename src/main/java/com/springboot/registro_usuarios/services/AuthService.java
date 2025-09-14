@@ -18,14 +18,15 @@ public class AuthService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    /*
     public User registerUser(User user){
-        user.setRole(Role.ADMIN);
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
+
+
         return userRepository.save(user);
     }
 
-    /*
     public boolean validateLogin(LoginRequest loginRequest){
         User user = userRepository.findByEmail(loginRequest.getEmail()).orElse(null);
         if(user == null) {

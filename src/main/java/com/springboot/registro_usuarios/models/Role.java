@@ -2,5 +2,5 @@ package com.springboot.registro_usuarios.models;
 
 public enum Role {
     ADMIN,
-    TRABAJADOR
+    EMPLOYEE
 }
