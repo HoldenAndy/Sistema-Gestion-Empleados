@@ -4,6 +4,7 @@ import com.springboot.registro_usuarios.models.Employee;
 import com.springboot.registro_usuarios.models.Role;
 import com.springboot.registro_usuarios.models.User;
 import com.springboot.registro_usuarios.repositories.UserRepository;
+import com.springboot.registro_usuarios.repositories.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +22,9 @@ public class RegistroUsuariosApplication {
 	}
 
 	@Bean
-	public CommandLineRunner createAdminUser(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+	public CommandLineRunner createAdminUser(UserRepository userRepository,
+											 EmployeeRepository employeeRepository,
+											 PasswordEncoder passwordEncoder) {
 		return args -> {
 			if (userRepository.findByEmail("admin@empresa.com").isEmpty()) {
 				User adminUser = new User();
@@ -39,10 +42,13 @@ public class RegistroUsuariosApplication {
 				adminEmployee.setDate(LocalDate.now());
 				adminEmployee.setUser(adminUser);
 
+				employeeRepository.save(adminEmployee);
+
 				System.out.println("✅ Primer usuario administrador creado.");
 				System.out.println("✅ Primer trabajador administrador creado.");
 			} else {
-				System.out.println("✅ El usuario administrador ya existe.");
+				System.out.println("❌ El usuario administrador ya existe.");
+				System.out.println("❌ El trabajador administrador ya existe");
 			}
 		};
 	}
