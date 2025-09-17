@@ -1,9 +1,9 @@
 package com.springboot.registro_usuarios.models;
 
 import jakarta.persistence.*;
-
 import java.sql.Time;
 import java.time.LocalDate;
+import java.util.Set; // Importar Set para la colección de tareas
 
 @Entity
 @Table(name = "Employee")
@@ -28,9 +28,15 @@ public class Employee {
     @Column(nullable = false)
     private LocalDate date;
 
+    @Column(nullable = false)
+    private double performanceScore = 0.0;
+
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Task> tasks;
 
     public Employee() {
     }
@@ -84,11 +90,27 @@ public class Employee {
         this.date = date;
     }
 
+    public double getPerformanceScore() {
+        return performanceScore;
+    }
+
+    public void setPerformanceScore(double performanceScore) {
+        this.performanceScore = performanceScore;
+    }
+
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
     }
 }
