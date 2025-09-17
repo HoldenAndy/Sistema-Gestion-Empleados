@@ -41,7 +41,6 @@ public class Employee {
     public Employee() {
     }
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

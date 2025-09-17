@@ -2,37 +2,17 @@ package com.springboot.registro_usuarios.models;
 
 import jakarta.persistence.*;
 
-/*
-JPA significa Java Persistence API,
-una especificación estándar para el mapeo de objetos relacionales (ORM) en Java
-que simplifica la persistencia de datos entre objetos Java y bases de datos relacionales.
- */
+@Entity
 
-@Entity /*
-Esta notación sirve para indicarle a JPA que la clase es una entidad
-y que debe ser mapeada a una base de datos.
- */
-@Table(name = "users") /*
-Opcional, pero muy buena práctica.
-Le dice a JPA que el nombre que debe tener la tabla en la base de datos.
-*/
+@Table(name = "users")
 public class User {
 
-    @Id/*
-    Le dice a JPA que este atributo (id) es la clave primaria de la tabla.
-    */
-    @GeneratedValue(strategy = GenerationType.IDENTITY)/*
-    Esta anotación le dice a la base de datos que genere automáticamente el valor del ID.
-    La estrategia IDENTITY es la más común para esto.
-    */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
-    @Column(unique = true, nullable = false)/*
-    Esta anotación permite definir las propiedades de una columna.
-    La propiedad unique en true es para indicar que el atributo debe ser único,
-    y el nullable es para indicar que el atributo no puede ser null, debe contener datos.
-    */
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(nullable = false)

@@ -26,34 +26,8 @@ public class AuthController {
         this.jwtService = jwtService;
     }
 
-    /*@PostMapping("/register")
-    public ResponseEntity<User> registerUser (@RequestBody User user/*
-    @RequestBody User user: Esta anotación le dice a Spring que tome el cuerpo de la petición HTTP
-    (el JSON que envía el cliente) y lo convierta automáticamente en un objeto User de Java.
-    Esto es uno de los mayores beneficios de Spring.
-
-    ){
-
-        User registeredUser = authService.registerUser(user);
-        return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);/*
-        Un ResponseEntity es una clase de Spring que representa la respuesta HTTP completa,
-        incluyendo el cuerpo, los encabezados y el código de estado. Aquí, estamos devolviendo
-        el usuario registrado y un código de estado 201 Created, que es la respuesta estándar
-        para la creación exitosa de un recurso.
-
-    }*/
 
     @PostMapping("/login")
-    /*
-    public ResponseEntity<String> loginUser (@RequestBody LoginRequest loginRequest){
-        boolean isAuthenticated = authService.validateLogin(loginRequest);
-
-        if(isAuthenticated == false){
-            return new ResponseEntity<>("Credenciales inválidas", HttpStatus.OK);
-        }
-        return new ResponseEntity<>("Login éxitoso", HttpStatus.OK);
-    }
-    */
     public ResponseEntity<?> loginUser (@RequestBody LoginRequest loginRequest){
         User user = authService.validateLogin(loginRequest);
 
