@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="section">
-                <h2>🛠️ Tecnologías Utilizadas</h2>
+                <h2>Tecnologías Utilizadas</h2>
                 <div class="tech-grid">
                     <div class="tech-category">
                         <h4>Framework Principal</h4>
