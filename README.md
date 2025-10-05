@@ -1,6 +1,6 @@
 <div class="container">
         <header>
-            <h1>📋 Sistema de Gestión de RRHH</h1>
+            <h1>Sistema de Gestión de RRHH</h1>
             <p>Documentación Técnica del Sistema</p>
         </header>
         <div class="content">
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="section">
-                <h2>🚀 Flujo de Funcionamiento</h2>
+                <h2>Flujo de Funcionamiento</h2>
                 <h3>Inicialización del Sistema</h3>
                 <p>Al arrancar la aplicación, se ejecuta un CommandLineRunner que:</p>
                 <ol class="flow-steps">
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="section">
-                <h2>🔌 Endpoints REST de la API</h2>
+                <h2>Endpoints REST de la API</h2>
                 <div class="endpoint-section">
                     <h3>AuthController (/api/auth)</h3>
                     <div class="endpoint">
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="section">
-                <h2>🔐 Flujo de Autenticación</h2>
+                <h2>Flujo de Autenticación</h2>
                 <ol class="flow-steps">
                     <li>Usuario envía credenciales a <code>/api/auth/login</code></li>
                     <li>AuthService valida email y contraseña</li>
@@ -153,7 +153,7 @@
                 </ol>
             </div>
             <div class="section">
-                <h2>📝 Flujo de Gestión de Tareas</h2>
+                <h2>Flujo de Gestión de Tareas</h2>
                 <ol class="flow-steps">
                     <li>Admin asigna tarea con estado "PENDING"</li>
                     <li>Empleado consulta sus tareas</li>
