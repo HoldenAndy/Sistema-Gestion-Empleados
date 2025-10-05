@@ -5,16 +5,16 @@
         </header>
         <div class="content">
             <div class="section">
-                <h2>🎯 Descripción General del Proyecto</h2>
+                <h2>Descripción General del Proyecto</h2>
                 <p>Este proyecto es una <strong>aplicación backend de gestión de recursos humanos</strong> desarrollada con Spring Boot. El sistema permite administrar empleados, asignar tareas, realizar seguimiento de su desempeño y gestionar la autenticación de usuarios mediante tokens JWT.</p>      
                 <h3>Tipos de Usuarios</h3>
                 <div class="user-types">
                     <div class="user-card">
-                        <h4>👨‍💼 Administradores (ADMIN)</h4>
+                        <h4>Administradores (ADMIN)</h4>
                         <p>Tienen control total sobre empleados y tareas del sistema</p>
                     </div>
                     <div class="user-card">
-                        <h4>👥 Empleados (EMPLOYEE)</h4>
+                        <h4>Empleados (EMPLOYEE)</h4>
                         <p>Pueden ver y actualizar sus propias tareas asignadas</p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <li>Crea un empleado asociado al usuario admin</li>
                 </ol>
                 <div class="credentials">
-                    <strong>🔑 Credenciales por defecto:</strong> admin@empresa.com / admin123
+                    <strong>Credenciales por defecto:</strong> admin@empresa.com / admin123
                 </div>
             </div>
             <div class="section">
@@ -143,7 +143,7 @@
                 </ol>
             </div>
             <div class="section">
-                <h2>🔑 Flujo de Primer Login</h2>
+                <h2>Flujo de Primer Login</h2>
                 <ol class="flow-steps">
                     <li>Usuario nuevo inicia sesión y recibe <code>firstLogin: true</code></li>
                     <li>Frontend debe redirigir a cambio de contraseña obligatorio</li>
@@ -163,7 +163,7 @@
                 </ol>
             </div>
             <div class="section">
-                <h2>💼 Casos de Uso Principales</h2>
+                <h2>Casos de Uso Principales</h2>
                 <div class="use-case-grid">
                     <div class="use-case-card">
                         <h4>Para Administradores</h4>
