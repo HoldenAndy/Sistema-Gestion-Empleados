@@ -48,19 +48,6 @@
                 </div>
             </div>
             <div class="section">
-                <h2>Flujo de Funcionamiento</h2>
-                <h3>Inicialización del Sistema</h3>
-                <p>Al arrancar la aplicación, se ejecuta un CommandLineRunner que:</p>
-                <ol class="flow-steps">
-                    <li>Verifica si existe el usuario administrador</li>
-                    <li>Si no existe, crea un usuario admin con credenciales predefinidas</li>
-                    <li>Crea un empleado asociado al usuario admin</li>
-                </ol>
-                <div class="credentials">
-                    <strong>Credenciales por defecto:</strong> admin@empresa.com / admin123
-                </div>
-            </div>
-            <div class="section">
                 <h2>Endpoints REST de la API</h2>
                 <div class="endpoint-section">
                     <h3>AuthController (/api/auth)</h3>
@@ -81,6 +68,19 @@
                         <p>Permite cambiar contraseña (requiere autenticación)</p>
                     </div>
                 </div>
+            <div class="section">
+                <h2>Flujo de Funcionamiento</h2>
+                <h3>Inicialización del Sistema</h3>
+                <p>Al arrancar la aplicación, se ejecuta un CommandLineRunner que:</p>
+                <ol class="flow-steps">
+                    <li>Verifica si existe el usuario administrador</li>
+                    <li>Si no existe, crea un usuario admin con credenciales predefinidas</li>
+                    <li>Crea un empleado asociado al usuario admin</li>
+                </ol>
+                <div class="credentials">
+                    <strong>Credenciales por defecto:</strong> admin@empresa.com / admin123
+                </div>
+            </div>
                 <div class="endpoint-section">
                     <h3>EmployeeController (/api/employees)</h3>
                     <div class="endpoint">
