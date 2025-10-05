@@ -67,21 +67,7 @@
                         <span class="role-badge">Autenticado</span>
                         <p>Permite cambiar contraseña (requiere autenticación)</p>
                     </div>
-                </div>
-            <div class="section">
-                <h2>Flujo de Funcionamiento</h2>
-                <h3>Inicialización del Sistema</h3>
-                <p>Al arrancar la aplicación, se ejecuta un CommandLineRunner que:</p>
-                <ol class="flow-steps">
-                    <li>Verifica si existe el usuario administrador</li>
-                    <li>Si no existe, crea un usuario admin con credenciales predefinidas</li>
-                    <li>Crea un empleado asociado al usuario admin</li>
-                </ol>
-                <div class="credentials">
-                    <strong>Credenciales por defecto:</strong> admin@empresa.com / admin123
-                </div>
-            </div>
-                <div class="endpoint-section">
+                        <div class="endpoint-section">
                     <h3>EmployeeController (/api/employees)</h3>
                     <div class="endpoint">
                         <span class="method get">GET</span>
@@ -108,6 +94,19 @@
                         <p>Elimina empleado y su usuario</p>
                     </div>
                 </div>
+            <div class="section">
+                <h2>Flujo de Funcionamiento</h2>
+                <h3>Inicialización del Sistema</h3>
+                <p>Al arrancar la aplicación, se ejecuta un CommandLineRunner que:</p>
+                <ol class="flow-steps">
+                    <li>Verifica si existe el usuario administrador</li>
+                    <li>Si no existe, crea un usuario admin con credenciales predefinidas</li>
+                    <li>Crea un empleado asociado al usuario admin</li>
+                </ol>
+                <div class="credentials">
+                    <strong>Credenciales por defecto:</strong> admin@empresa.com / admin123
+                </div>
+            </div>
                 <div class="endpoint-section">
                     <h3>TaskController (/api/tasks)</h3>
                     <div class="endpoint">
