@@ -1,8 +1,4 @@
 <div class="container">
-        <header>
-            <h1>Sistema de Gestión de RRHH</h1>
-            <p>Documentación Técnica del Sistema</p>
-        </header>
         <div class="content">
             <div class="section">
                 <h2>Descripción General del Proyecto</h2>
