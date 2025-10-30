@@ -1,4 +1,4 @@
-package com.springboot.registro_usuarios.dto;
+package com.springboot.registro_usuarios.models.dto;
 
 public class PasswordChangeRequest {
     private String newPassword;

@@ -1,8 +1,8 @@
 package com.springboot.registro_usuarios.controllers;
 
-import com.springboot.registro_usuarios.dto.LoginRequest;
-import com.springboot.registro_usuarios.dto.PasswordChangeRequest;
-import com.springboot.registro_usuarios.models.User;
+import com.springboot.registro_usuarios.models.dto.LoginRequest;
+import com.springboot.registro_usuarios.models.dto.PasswordChangeRequest;
+import com.springboot.registro_usuarios.models.entities.User;
 import com.springboot.registro_usuarios.services.AuthService;
 import com.springboot.registro_usuarios.services.JwtService;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 

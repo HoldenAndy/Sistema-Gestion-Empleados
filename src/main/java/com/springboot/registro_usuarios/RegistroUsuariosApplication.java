@@ -1,8 +1,8 @@
 package com.springboot.registro_usuarios;
 
-import com.springboot.registro_usuarios.models.Employee;
-import com.springboot.registro_usuarios.models.Role;
-import com.springboot.registro_usuarios.models.User;
+import com.springboot.registro_usuarios.models.entities.Employee;
+import com.springboot.registro_usuarios.models.entities.Role;
+import com.springboot.registro_usuarios.models.entities.User;
 import com.springboot.registro_usuarios.repositories.UserRepository;
 import com.springboot.registro_usuarios.repositories.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @SpringBootApplication
 public class RegistroUsuariosApplication {

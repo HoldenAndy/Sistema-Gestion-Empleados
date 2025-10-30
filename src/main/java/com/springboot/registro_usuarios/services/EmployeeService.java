@@ -1,13 +1,10 @@
 package com.springboot.registro_usuarios.services;
 
-import com.springboot.registro_usuarios.dto.EmployeeCreationRequest;
-import com.springboot.registro_usuarios.dto.EmployeeUpdateRequest;
-import com.springboot.registro_usuarios.dto.TaskCreationRequest;
-import com.springboot.registro_usuarios.dto.TaskUpdateRequest;
-import com.springboot.registro_usuarios.models.Employee;
-import com.springboot.registro_usuarios.models.Role;
-import com.springboot.registro_usuarios.models.Task;
-import com.springboot.registro_usuarios.models.User;
+import com.springboot.registro_usuarios.models.dto.EmployeeCreationRequest;
+import com.springboot.registro_usuarios.models.dto.EmployeeUpdateRequest;
+import com.springboot.registro_usuarios.models.dto.TaskCreationRequest;
+import com.springboot.registro_usuarios.models.dto.TaskUpdateRequest;
+import com.springboot.registro_usuarios.models.entities.*;
 import com.springboot.registro_usuarios.repositories.EmployeeRepository;
 import com.springboot.registro_usuarios.repositories.TaskRepository;
 import com.springboot.registro_usuarios.repositories.UserRepository;
@@ -92,7 +89,7 @@ public class EmployeeService {
             Task task = new Task();
             task.setDescription(request.getDescription());
             task.setDueDate(request.getDueDate());
-            task.setStatus("PENDING");
+            task.setStatus(Status.PENDING);
             task.setEmployee(employee);
             return Optional.of(taskRepository.save(task));
         }
@@ -104,12 +101,26 @@ public class EmployeeService {
 
         if (taskOpt.isPresent()) {
             Task task = taskOpt.get();
+            Status originalStatus = task.getStatus();
+
             task.setStatus(request.getStatus());
 
-            if ("COMPLETED".equalsIgnoreCase(request.getStatus())) {
-                Employee employee = task.getEmployee();
-                double currentScore = employee.getPerformanceScore();
-                employee.setPerformanceScore(currentScore + 10.0);
+            Employee employee = task.getEmployee();
+            double currentScore = employee.getPerformanceScore();
+            double newScore = currentScore;
+            boolean scoreChanged = false;
+
+            if (Status.COMPLETED.equals(request.getStatus()) && !Status.COMPLETED.equals(originalStatus)) {
+                newScore += 10.0;
+                scoreChanged = true;
+            }
+            else if (Status.COMPLETED.equals(originalStatus) && !Status.COMPLETED.equals(request.getStatus())) {
+                newScore -= 10.0;
+                scoreChanged = true;
+            }
+
+            if (scoreChanged) {
+                employee.setPerformanceScore(newScore);
                 employeeRepository.save(employee);
             }
 

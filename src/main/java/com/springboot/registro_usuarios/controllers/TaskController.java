@@ -1,8 +1,9 @@
 package com.springboot.registro_usuarios.controllers;
 
-import com.springboot.registro_usuarios.dto.TaskCreationRequest;
-import com.springboot.registro_usuarios.dto.TaskUpdateRequest;
-import com.springboot.registro_usuarios.models.Task;
+import com.springboot.registro_usuarios.models.dto.TaskCreationRequest;
+import com.springboot.registro_usuarios.models.dto.TaskUpdateRequest;
+import com.springboot.registro_usuarios.models.entities.Status;
+import com.springboot.registro_usuarios.models.entities.Task;
 import com.springboot.registro_usuarios.services.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,10 +43,10 @@ public class TaskController {
     @PutMapping("/update-status/{taskId}")
     @PreAuthorize("hasAnyRole('ADMIN', 'EMPLOYEE')")
     public ResponseEntity<Object> updateTaskStatus(@PathVariable Long taskId, @RequestBody TaskUpdateRequest request) {
-        if (request.getStatus() == null || request.getStatus().isEmpty()) {
+        if (request.getStatus() == null || request.getStatus().toString().isEmpty()) {
             return new ResponseEntity<>("El estado de la tarea es obligatorio.", HttpStatus.BAD_REQUEST);
         }
-        if (!"PENDING".equalsIgnoreCase(request.getStatus()) && !"COMPLETED".equalsIgnoreCase(request.getStatus())) {
+        if (!Status.PENDING.equals(request.getStatus()) && !Status.COMPLETED.equals(request.getStatus())) {
             return new ResponseEntity<>("El estado debe ser 'PENDING' o 'COMPLETED'.", HttpStatus.BAD_REQUEST);
         }
 

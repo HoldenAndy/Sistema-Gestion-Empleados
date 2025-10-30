@@ -1,6 +1,6 @@
 package com.springboot.registro_usuarios.services;
 
-import com.springboot.registro_usuarios.models.User;
+import com.springboot.registro_usuarios.models.entities.User;
 import com.springboot.registro_usuarios.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

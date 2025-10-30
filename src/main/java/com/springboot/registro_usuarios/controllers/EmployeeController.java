@@ -1,11 +1,10 @@
 package com.springboot.registro_usuarios.controllers;
 
-import com.springboot.registro_usuarios.dto.EmployeeCreationRequest;
-import com.springboot.registro_usuarios.dto.EmployeeUpdateRequest;
-import com.springboot.registro_usuarios.models.Employee;
+import com.springboot.registro_usuarios.models.dto.EmployeeCreationRequest;
+import com.springboot.registro_usuarios.models.dto.EmployeeUpdateRequest;
+import com.springboot.registro_usuarios.models.entities.Employee;
 import com.springboot.registro_usuarios.services.EmployeeService;
 
-import jakarta.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.springboot.registro_usuarios.models;
+package com.springboot.registro_usuarios.models.entities;
 
 import jakarta.persistence.*;
 

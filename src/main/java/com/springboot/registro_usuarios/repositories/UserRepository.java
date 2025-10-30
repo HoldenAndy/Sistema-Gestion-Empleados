@@ -1,8 +1,7 @@
 package com.springboot.registro_usuarios.repositories;
 
-import com.springboot.registro_usuarios.models.User;
+import com.springboot.registro_usuarios.models.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package com.springboot.registro_usuarios.models;
+package com.springboot.registro_usuarios.models.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -17,12 +17,12 @@ public class Task {
     @Column(nullable = false)
     private LocalDate dueDate;
 
-    @Column(nullable = false)
-    private String status; // "PENDING", "COMPLETED"
-
     @ManyToOne
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private Employee employee;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Long getId() {
         return id;
@@ -48,14 +48,6 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Employee getEmployee() {
         return employee;
     }
@@ -63,4 +55,8 @@ public class Task {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
+
+    public Status getStatus() { return status; }
+
+    public void setStatus(Status status) { this.status = status; }
 }

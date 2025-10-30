@@ -1,6 +1,6 @@
 package com.springboot.registro_usuarios.repositories;
 
-import com.springboot.registro_usuarios.models.Task;
+import com.springboot.registro_usuarios.models.entities.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,10 @@
-package com.springboot.registro_usuarios.models;
+package com.springboot.registro_usuarios.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import java.sql.Time;
+
 import java.time.LocalDate;
-import java.util.Set; // Importar Set para la colección de tareas
+import java.util.Set;
 
 @Entity
 @Table(name = "Employee")
@@ -36,6 +37,7 @@ public class Employee {
     private User user;
 
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private Set<Task> tasks;
 
     public Employee() {
